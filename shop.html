@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Old Mumbai Icecream</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-brown: #9E4755;
+            --accent-pink: #F6A18D;
+            --brand-teal: #8ec8c3;
+            --bg-cream: #FFFDF9;
+        }
+
+        body {
+            font-family: 'Fredoka', cursive, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--primary-brown);
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+    /* Navbar */
+.navbar{
+    background:#8FC8C3;   /* Mint Green */
+    padding:12px 0;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+/* Logo */
+.navbar-brand{
+    color:#B04D67 !important;
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.navbar-brand i{
+    color:#F99A86;
+    margin-right:8px;
+}
+
+/* Navigation Links */
+.nav-link{
+    color:#B04D67 !important;
+    font-weight:600;
+    font-size:15px;
+    padding:10px 16px !important;
+    position:relative;
+    transition:all .3s ease;
+}
+
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:15%;
+    bottom:5px;
+    width:0;
+    height:2px;
+    background:#F99A86;
+    transition:.3s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color:#9B415A !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+    width:70%;
+}
+
+/* Order Online Button */
+.btn-order-online{
+    background-color: #f0796e !important;
+    color: #fff !important;
+    border: none !important;          /* Remove border */
+    outline: none !important;         /* Remove outline */
+    border-radius: 50px;
+    padding: 10px 28px;
+    font-weight: 600;
+    box-shadow: none !important;      /* Remove shadow */
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+.btn-order-online:hover{
+    background-color: #E87A90 !important;
+    color: #fff !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Click / Focus */
+.btn-order-online:focus,
+.btn-order-online:active{
+    background-color: #E87A90 !important;
+    color: #fff !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+        /* Hero & Multi-Colored Diagonal/Curved Partition Sections */
+        .shop-hero-section {
+            position: relative;
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            padding: 50px 0 90px 0;
+            overflow: hidden;
+        }
+
+        .flavor-catalog-container {
+            position: relative;
+            background-color: #FFFDF9;
+            padding: 70px 0 120px 0;
+            overflow: hidden;
+        }
+
+        /* Attractive multi-layered decorative diagonal partitions */
+        .catalog-partition-bg-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(135deg, rgba(255, 236, 179, 0.7) 0%, rgba(255, 224, 130, 0.5) 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+            z-index: 1;
+        }
+
+        .catalog-partition-bg-2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(135deg, rgba(248, 215, 234, 0.4) 0%, rgba(252, 228, 236, 0.6) 100%);
+            clip-path: polygon(0 30%, 100% 0%, 100% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        /* Card Styling & Hover Effects */
+        .flavor-card {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid rgba(142, 200, 195, 0.3);
+            box-shadow: 0 10px 30px rgba(158, 71, 85, 0.08);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(158, 71, 85, 0.18);
+            border-color: var(--accent-pink);
+        }
+
+        .flavor-card img {
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .flavor-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .badge-custom {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-pink);
+            color: white;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            z-index: 2;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #8ec8c3;
+            color: #fff;
+            padding: 60px 0 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===========================
+         NAVBAR: COLLAPSIBLE WINDOW ON MOBILE/TABLET, HORIZONTAL ON LAPTOP
+         =========================== -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fas fa-ice-cream me-2"></i> Old Mumbai Icecream
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="flavors.html">Flavors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="shop.html" class="btn btn-order-online shadow-sm active">Order Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===========================
+         HERO TITLE SECTION
+         =========================== -->
+    <section class="shop-hero-section text-center">
+        <div class="container" data-aos="fade-down" data-aos-duration="1000">
+            <div class="d-inline-block px-4 py-1 mb-3 rounded-pill bg-white shadow-sm" style="border: 1px solid rgba(142, 200, 195, 0.5);">
+                <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary-brown); letter-spacing: 1px;">
+                    <i class="fa-solid fa-ice-cream me-1 text-danger"></i> ONLINE ORDERING CATALOG
+                </span>
+            </div>
+            <h1 class="display-4 fw-bold mb-3" style="color: var(--primary-brown);">
+                Explore Our <span style="color: var(--accent-pink);">Divine Collection</span>
+            </h1>
+            <p class="text-muted mx-auto lead" style="max-width: 650px; color: var(--primary-brown) !important; font-size: 1.05rem;">
+                Hand-churned daily using classic old-Mumbai recipes, organic farm-fresh milk, and pure exotic ingredients for unmatched creaminess.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===========================
+         CATALOG GRID SECTION WITH MULTI-COLORED PARTITIONS (9 ITEMS TOTAL)
+         =========================== -->
+    <section class="flavor-catalog-container">
+        <div class="catalog-partition-bg-1"></div>
+        <div class="catalog-partition-bg-2"></div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row g-4">
+                <!-- Item 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom">Bestseller</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p1.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Royal Saffron Pistachio</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹180</span>
+                                </div>
+                                <p class="text-muted small">Infused with real Kashmiri saffron strands and crushed roasted Iranian pistachios for an aromatic royal treat.</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #ffb300;">Seasonal Fresh</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p2.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Alphonso Mango Velvet</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹190</span>
+                                </div>
+                                <p class="text-muted small">Made exclusively with rich Ratnagiri Alphonso mango pulp folded smoothly into thick, slow-churned dairy cream.</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #6d4c41;">Extra Rich</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p3.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Belgian Dark Fudge</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹210</span>
+                                </div>
+                                <p class="text-muted small">An intense blend of 70% dark Belgian cocoa chips and heavy fudge swirls designed for absolute chocolate lovers.</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #26a69a;">Refreshing</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p4.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Mint Choc Chip</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹160</span>
+                                </div>
+                                <p class="text-muted small">Refreshing cool mint ice cream studded with crisp, bittersweet dark chocolate flakes.</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #ab47bc;">Classic</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p11.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Classic Malai Matka</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹140</span>
+                                </div>
+                                <p class="text-muted small">Rich creamy malai served in a traditional clay pot, intensely aromatic and smooth taste.</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #ef5350;">Specialty</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p6.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Caramel Praline Crunch</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹200</span>
+                                </div>
+                                <p class="text-muted small">Butterscotch sweet cream loaded with caramelized pecan nuts and rich sea salt caramel swirls.</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 (New Additional Image 1) -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #ec407a;">Berry Blast</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p7.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Kaju Shake</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹220</span>
+                                </div>
+                                <p class="text-muted small">Creamy cashew delight blended with rich fresh milk.</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 (New Additional Image 2) -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #795548;">Nutty Delight</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p9.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Toasted Butter Pecan</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹195</span>
+                                </div>
+                                <p class="text-muted small">Royal saffron flavor infused with smooth creamy milk</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9 (New Additional Image 3) -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <span class="badge-custom" style="background-color: #5c6bc0;">Exotic Fusion</span>
+                        <div class="overflow-hidden">
+                            <img src="images/p8.jfif" class="w-100" alt="Royal Saffron Pistachio"></div>
+                        <div class="p-4 d-flex flex-column flex-grow-1 justify-content-between bg-white">
+                            <div>
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="fw-bold mb-0 fs-5" style="color: var(--primary-brown);">Rose Petal Gulkand</h4>
+                                    <span class="fw-bold fs-5 text-danger">₹175</span>
+                                </div>
+                                <p class="text-muted small">Nutritious almond shake packed with creamy delicious goodness</p>
+                            </div>
+                            <div class="mt-3 pt-3 border-top">
+                                <button class="btn btn-order-online w-100 py-2 shadow-sm">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FOOTER SECTION (EXACT MATCH)
+         =========================== -->
+    <footer id="contact">
+        <div class="container" data-aos="fade-in" data-aos-duration="1000">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-3">
+                    <h3 class="fw-bold mb-3">
+                        <i class="fa-solid fa-ice-cream me-2" style="color: var(--accent-pink);"></i>Old Mumbai Icecream
+                    </h3>
+                    <p class="text-white-90" style="color: rgba(255,255,255,0.9);">Making the world a sweeter place one scoop at a time.</p>
+                    <p class="text-white-90" style="color: rgba(255,255,255,0.9);">123 Ice Cream Lane, Dessert City, DC 12345</p>
+                    <p class="text-white-90" style="color: rgba(255,255,255,0.9);">Email: hello@oldmumbai.com</p>
+                    <p class="text-white-90" style="color: rgba(255,255,255,0.9);">Phone: (555) 123-4567</p>
+                </div>
+
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="flavors.html" class="text-decoration-none">Flavors</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Stay Connected</h5>
+                    <p class="text-white-90" style="color: rgba(255,255,255,0.9);">Subscribe to get secret menu updates and sweet discounts.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control border-0" placeholder="Enter your email"
+                            style="background-color: rgba(255, 255, 255, 0.2); color: #fff;">
+                        <button class="btn btn-order-online border-0" type="button" style="background-color: var(--accent-pink); color: #fff;">Join</button>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="fs-5 text-decoration-none"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="fs-5 text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="fs-5 text-decoration-none"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="fs-5 text-decoration-none"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Find Us</h5>
+                    <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459392!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a6ae072e!2sTimes+Square!5e0!3m2!1en!2sus!4v1670971548255!5m2!1en!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white-10 mt-4 mb-2" style="border-color: rgba(255,255,255,0.2);">
+
+            <div class="text-center py-2 small" style="color: rgba(255,255,255,0.8);">
+                <p class="mb-1">&copy; 2026 Old Mumbai Ice Cream Shop & Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800
+        });
+    </script>
+</body>
+
+</html>

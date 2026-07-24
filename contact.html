@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Old Mumbai Icecream</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-teal: #7ab8ae;
+            --brand-brown: #763b2c;
+            --brand-peach: #f79479;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: #ffffff;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+/* Navbar */
+.navbar{
+    background:#8FC8C3;   /* Mint Green */
+    padding:12px 0;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+/* Logo */
+.navbar-brand{
+    color:#B04D67 !important;
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.navbar-brand i{
+    color:#F99A86;
+    margin-right:8px;
+}
+
+/* Navigation Links */
+.nav-link{
+    color:#B04D67 !important;
+    font-weight:600;
+    font-size:15px;
+    padding:10px 16px !important;
+    position:relative;
+    transition:all .3s ease;
+}
+
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:15%;
+    bottom:5px;
+    width:0;
+    height:2px;
+    background:#F99A86;
+    transition:.3s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+    color:#9B415A !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+    width:70%;
+}
+
+/* Order Online Button */
+.btn-order-online{
+    background:#F99A86;
+    color:#ffffff !important;
+    border:none;
+    border-radius:40px;
+    padding:10px 28px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-order-online:hover{
+    background:#F28770;
+    color:#ffffff !important;
+}
+        /* Buttons */
+        .btn-custom-pink {
+            background-color: var(--accent-pink);
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom-pink:hover {
+            background-color: var(--deep-pink);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(246, 161, 141, 0.4);
+        }
+
+        .btn-outline-pink {
+            border: 2px solid var(--primary-brown);
+            color: var(--primary-brown);
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 600;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-pink:hover {
+            background-color: var(--primary-brown);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        /* ===========================
+           CONTACT SECTION WITH PARTITIONS
+           =========================== */
+        .contact-partition-section {
+            position: relative;
+            background: #ffffff;
+            padding: 80px 0 120px 0;
+            overflow: hidden;
+        }
+
+        .partition-bg-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+            z-index: 1;
+            border-bottom: 4px solid #ffffff;
+        }
+
+        .partition-bg-2 {
+            position: absolute;
+            top: 35%;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+            clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0 100%);
+            z-index: 1;
+            border-bottom: 4px solid #ffffff;
+        }
+
+        .partition-bg-3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        .glow-effect-1 {
+            position: absolute;
+            top: 15%;
+            left: -5%;
+            width: 350px;
+            height: 350px;
+            background: rgba(255, 255, 255, 0.6);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: 2;
+            animation: floatGlow 10s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .glow-effect-2 {
+            position: absolute;
+            bottom: 10%;
+            right: -5%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.7);
+            filter: blur(90px);
+            border-radius: 50%;
+            z-index: 2;
+            animation: floatGlow 12s ease-in-out infinite alternate;
+            pointer-events: none;
+        }
+
+        @keyframes floatGlow {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.05); }
+        }
+
+        .contact-glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(118, 59, 44, 0.08);
+            transition: all 0.4s ease;
+        }
+
+        .contact-glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(118, 59, 44, 0.15);
+        }
+
+        .form-control, .form-select {
+            border: 1.5px solid rgba(122, 184, 174, 0.4);
+            border-radius: 12px;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--brand-brown);
+            transition: all 0.3s;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--brand-peach);
+            box-shadow: 0 0 0 0.25rem rgba(247, 148, 121, 0.25);
+            background-color: #ffffff;
+        }
+
+        /* ===========================
+           EXACT MATCH FOOTER SECTION
+           =========================== */
+        footer {
+            background-color: #61ada7;
+            color: #ffffff;
+            padding-top: 60px;
+            padding-bottom: 20px;
+        }
+
+        footer h3, footer h5 {
+            color: #ffffff !important;
+        }
+
+        .text-white-90 {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+
+        .text-white-70 {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .text-white-70:hover {
+            color: rgba(255, 255, 255, 1) !important;
+        }
+
+        .border-white-10 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .btn-join-custom {
+            background-color: var(--brand-peach);
+            color: var(--brand-brown);
+            font-weight: 700;
+            border: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-join-custom:hover {
+            background-color: #e07d61;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===========================
+         NAVBAR: COLLAPSIBLE WINDOW ON MOBILE/TABLET, HORIZONTAL ON LAPTOP
+         =========================== -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-ice-cream"></i> Old Mumbai Icecream
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="flavors.html">Flavors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servises.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    <li class="nav-item mt-2 mt-lg-0">
+                        <a href="shop.html" class="btn btn-order-online shadow-sm">Order Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- ===========================
+         CONTACT SECTION WITH PARTITIONS & ANIMATIONS
+         =========================== -->
+    <section class="contact-partition-section">
+        <div class="partition-bg-1"></div>
+        <div class="partition-bg-2" style="top: 30%; height: 35%;"></div>
+        <div class="partition-bg-2" style="top: 60%; height: 40%; background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);"></div>
+        <div class="partition-bg-3"></div>
+
+        <div class="glow-effect-1"></div>
+        <div class="glow-effect-2"></div>
+
+        <div class="container position-relative" style="z-index: 3;">
+            <div class="text-center mb-5" data-aos="fade-down" data-aos-duration="1000">
+                <span class="badge px-4 py-2 mb-3 rounded-pill text-uppercase shadow-sm"
+                    style="background-color: #ffffff; color: #763b2c; font-weight: 700; border: 1.5px solid rgba(122, 184, 174, 0.6); letter-spacing: 2px;">
+                    <i class="fa-solid fa-ice-cream me-2" style="color: #f79479;"></i> Reach Out to Us
+                </span>
+                <h1 class="display-4 fw-bold" style="color: #763b2c;">Let's Scoop Together</h1>
+                <p class="text-muted mx-auto" style="max-width: 600px; color: #5a4036 !important;">
+                    Have inquiries regarding custom catering, party orders, or franchise opportunities? Send us a message below!
+                </p>
+            </div>
+
+            <div class="row g-5 align-items-stretch">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-duration="900" data-aos-delay="100">
+                    <div class="contact-glass-card p-4 p-lg-5 h-100 d-flex flex-column justify-content-between">
+                        <div>
+                            <h3 class="fw-bold mb-4" style="color: #763b2c;">Parlor Information</h3>
+                            
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="rounded-circle text-white d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #7ab8ae 0%, #468c80 100%);">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1" style="color: #763b2c; font-size: 1.1rem;">Address</h5>
+                                    <p class="mb-0 text-muted small" style="color: #5a4036 !important;">123 Ice Cream Lane, Dessert City, DC 12345</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="rounded-circle text-white d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #f79479 0%, #d65476 100%);">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1" style="color: #763b2c; font-size: 1.1rem;">Phone</h5>
+                                    <p class="mb-0 text-muted small" style="color: #5a4036 !important;">(555) 123-4567</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="rounded-circle text-white d-flex align-items-center justify-content-center me-3 shadow-sm" style="width: 50px; height: 50px; min-width: 50px; background: linear-gradient(135deg, #f5bc6b 0%, #e0962d 100%);">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-1" style="color: #763b2c; font-size: 1.1rem;">Email</h5>
+                                    <p class="mb-0 text-muted small" style="color: #5a4036 !important;">hello@oldmumbai.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-top border-light">
+                            <span class="d-block fw-bold mb-2 text-uppercase small" style="color: #763b2c;">Connect Socially</span>
+                            <div class="social-icons">
+                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-decoration-none me-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-decoration-none"><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-7" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+                    <div class="contact-glass-card p-4 p-lg-5">
+                        <h3 class="fw-bold mb-4" style="color: #763b2c;">Send Us a Message</h3>
+                        <form class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label small fw-semibold text-muted">Your Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label small fw-semibold text-muted">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label small fw-semibold text-muted">Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="Catering or General Inquiry">
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label small fw-semibold text-muted">Message</label>
+                                <textarea class="form-control" id="message" rows="4" placeholder="Type your sweet message here..." required></textarea>
+                            </div>
+                            <div class="col-12 pt-2">
+                                <button type="submit" class="btn w-100 py-3 text-white fw-bold rounded-pill shadow-sm" style="background: linear-gradient(135deg, #f79479 0%, #d65476 100%); transition: all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
+                                    <i class="fa-solid fa-paper-plane me-2"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         EXACT MATCH FOOTER SECTION
+         =========================== -->
+    <footer id="contact">
+        <div class="container" data-aos="fade-in" data-aos-duration="1000">
+            <div class="row g-4 mb-4">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-3">
+                    <h3 class="fw-bold mb-3">
+                        <i class="fa-solid fa-ice-cream me-2" style="color: var(--brand-peach);"></i>Old Mumbai Icecream
+                    </h3>
+                    <p class="text-white-90">Making the world a sweeter place one scoop at a time.</p>
+                    <p class="text-white-90">123 Ice Cream Lane, Dessert City, DC 12345</p>
+                    <p class="text-white-90">Email: hello@oldmumbai.com</p>
+                    <p class="text-white-90">Phone: (555) 123-4567</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-90 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white-90 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white-90 text-decoration-none">Flavors</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white-90 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Newsletter & Social Media -->
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3">Stay Connected</h5>
+                    <p class="text-white-90">Subscribe to get secret menu updates and sweet discounts.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control border-0" placeholder="Enter your email"
+                            style="background-color: rgba(255, 255, 255, 0.2); color: #fff;">
+                        <button class="btn btn-join-custom border-0" type="button">Join</button>
+                    </div>
+                    <!-- Social Media Icons -->
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Interactive Map -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3">Find Us</h5>
+                    <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459392!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a6ae072e!2sTimes+Square!5e0!3m2!1en!2sus!4v1670971548255!5m2!1en!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white-10 mt-4 mb-2">
+
+            <!-- Compact, Attractive & Centered Copyright Bar -->
+            <div class="text-center py-2 text-white-70 small">
+                <p class="mb-1">&copy; 2026 Mello Ice Cream Shop & Company. All rights reserved.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="text-white-70 text-decoration-none">Privacy</a>
+                    <span>&bull;</span>
+                    <a href="#" class="text-white-70 text-decoration-none">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800
+        });
+    </script>
+</body>
+</html>

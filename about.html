@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Old Mumbai Icecream</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-pink: #ff3385;
+            --deep-pink: #c9184a;
+            --neon-pink: #ff758c;
+            --light-pink: #ffe6ec;
+            --subtle-pink-bg: #fff0f3;
+            --accent-purple: #7209b7;
+            --teal-color: #3fb5ab;
+            --dark-navy: #1b1b2f;
+            --warm-cream: #fff9fb;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--warm-cream);
+            overflow-x: hidden;
+            color: #4a3b4e;
+        }
+        /* ===========================
+   NAVBAR
+=========================== */
+
+header.site-header{
+    background:#8BC3BE;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    padding:14px 0;
+}
+
+/* Logo */
+.navbar-brand{
+    color:#A3464F !important;
+    font-size:2rem;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    letter-spacing:-0.5px;
+}
+
+.navbar-brand i{
+    color:#F79B85;
+    margin-right:10px;
+}
+
+/* Navigation */
+.navbar-nav{
+    align-items:center;
+}
+
+.navbar-nav .nav-item{
+    margin:0 10px;
+}
+
+.navbar-nav .nav-link{
+    color:#A3464F !important;
+    font-size:18px;
+    font-weight:600;
+    padding:10px 14px !important;
+    position:relative;
+    transition:.3s;
+}
+
+/* Underline */
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:4px;
+    width:0;
+    height:2px;
+    background:#F79B85;
+    transform:translateX(-50%);
+    transition:.3s;
+}
+/* Hover Effect Only */
+.navbar-nav .nav-link:hover{
+    color:#8A3845 !important;
+}
+
+.navbar-nav .nav-link:hover::after{
+    width:70%;
+}
+
+/* Active Link (No Underline) */
+.navbar-nav .nav-link.active{
+    color:#8A3845 !important;
+}
+
+.navbar-nav .nav-link.active::after{
+    width:0 !important;
+}
+
+/* Order Button */
+.btn-order-online{
+    background:#F79B85;
+    color:#fff !important;
+    border:none;
+    border-radius:50px;
+    padding:10px 28px;
+    font-weight:700;
+    box-shadow:none;
+    transition:.3s;
+}
+
+.btn-order-online:hover{
+    background:#A3464F;
+    color:#fff !important;
+}
+
+/* Toggle Button */
+.navbar-toggler{
+    border:none;
+    background:rgba(255,255,255,.3);
+    padding:7px 10px;
+    border-radius:10px;
+}
+
+.navbar-toggler:focus{
+    box-shadow:none;
+}
+
+/* Mobile */
+@media (max-width:991.98px){
+
+    .navbar-collapse{
+        background:#8BC3BE;
+        margin-top:12px;
+        padding:18px;
+        border-radius:12px;
+    }
+
+    .navbar-nav{
+        align-items:flex-start;
+        width:100%;
+    }
+
+    .navbar-nav .nav-item{
+        width:100%;
+        margin:6px 0;
+    }
+
+    .navbar-nav .nav-link{
+        width:100%;
+        text-align:left;
+        padding:12px 10px !important;
+        font-size:17px;
+    }
+
+    .btn-order-online{
+        width:100%;
+        margin-top:15px;
+        text-align:center;
+    }
+}
+
+
+        /* Glowing Text Effects */
+        .pink-gradient-text {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 20px rgba(255, 51, 133, 0.15);
+        }
+
+        /* 3D Glass Morphism Cards with Ultra Pink Glowing Borders */
+        .glass-card-3d {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 51, 133, 0.15);
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(201, 24, 74, 0.06);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card-3d:hover {
+            transform: translateY(-10px) scale(1.01);
+            border-color: rgba(255, 51, 133, 0.5);
+            box-shadow: 0 25px 50px rgba(255, 51, 133, 0.2);
+        }
+
+        /* Dynamic Parallax-style Image Cards */
+        .image-banner-card {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 15px 40px rgba(27, 27, 47, 0.1);
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .image-banner-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+        }
+
+        .image-banner-card:hover {
+            transform: translateY(-12px) rotate(0.5deg);
+            box-shadow: 0 25px 55px rgba(255, 51, 133, 0.3);
+        }
+
+        .image-banner-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay-badge {
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: var(--dark-navy);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 51, 133, 0.3);
+            transition: transform 0.4s ease;
+        }
+
+        .image-banner-card:hover .image-overlay-badge {
+            transform: scale(1.08) translateY(-3px);
+        }
+
+        /* Floating Interactive Feature Cards */
+        .feature-pink-card {
+            background: linear-gradient(145deg, #ffffff 0%, var(--subtle-pink-bg) 100%);
+            border: 2px solid rgba(255, 51, 133, 0.12);
+            border-radius: 28px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(255, 51, 133, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-pink-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-pink), var(--accent-purple));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-pink-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 45px rgba(255, 51, 133, 0.2);
+            border-color: rgba(255, 51, 133, 0.4);
+        }
+
+        .feature-pink-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Sliding Hover Text Effect */
+        .slide-hover-effect {
+            display: inline-block;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .slide-hover-effect:hover {
+            transform: translateX(10px);
+            color: var(--primary-pink) !important;
+        }
+
+        /* Floating Animations */
+        @keyframes floatComplex {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(1.5deg) scale(1.02);
+            }
+        }
+
+        .floating-element {
+            animation: floatComplex 6s ease-in-out infinite;
+        }
+
+        /* Pulse glow animation */
+        @keyframes pinkGlow {
+
+            0%,
+            100% {
+                opacity: 0.4;
+                filter: blur(60px);
+            }
+
+            50% {
+                opacity: 0.8;
+                filter: blur(80px);
+            }
+        }
+
+        .bg-glow-pink {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: rgba(255, 51, 133, 0.18);
+            border-radius: 50%;
+            z-index: 0;
+            animation: pinkGlow 8s ease-in-out infinite;
+        }
+
+        /* Footer Styles (Kept Same Header/Footer Rule) */
+        .text-white-90 {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .text-white-70 {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .text-white-70:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .border-white-10 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Updated Responsive Navigation Bar matching the provided image style -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar"
+        style="background-color: #6da79e; border-bottom: none;">
+        <div class="container">
+            <!-- Brand Logo and Text -->
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html"
+                style="color: #6c301a; font-size: 1.5rem;">
+                <i class="fa-solid fa-ice-cream me-2" style="color: #f49b81;"></i>Old Mumbai Icecream
+            </a>
+
+            <!-- Toggle Button for Mobile -->
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center pt-3 pt-lg-0 pb-3 pb-lg-0">
+                    <li class="nav-item mb-2 mb-lg-0">
+                        <a href="index.html" class="nav-link px-3 fw-semibold" style="color: #6b3e2e;">Home</a>
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0">
+                        <a href="about.html" class="nav-link px-3 fw-semibold active" style="color: #6b3e2e;">About
+                            Us</a>
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0">
+                        <a href="flavors.html" class="nav-link px-3 fw-semibold"
+                            style="color: #6b3e2e;">Flavors</a>
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0">
+                        <a href="servises.html" class="nav-link px-3 fw-semibold"
+                            style="color: #6b3e2e;">Services</a>
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0">
+                        <a href="contact.html" class="nav-link px-3 fw-semibold" style="color: #6b3e2e;">Contact</a>
+                    </li>
+                    <!-- Order Online Button -->
+                    <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
+                        <a href="shop.html"
+                            class="btn px-5 py-2 shadow-sm w-100 w-lg-auto fw-semibold rounded-pill"
+                            style="background-color: #f49b81; color: #fff; border: none;">Order Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add this to your CSS file for the active link state -->
+    <style>
+        .custom-navbar .nav-link.active {
+            text-decoration: underline;
+            text-decoration-thickness: 3px;
+            text-decoration-color: #e58b70;
+            text-underline-offset: 6px;
+        }
+    </style>
+<!-- Multi-Partitioned Dynamic Section with Multi-Tone Color Waves -->
+<section class="py-5 position-relative overflow-hidden" style="background: #ffffff; padding-bottom: 140px !important;">
+
+    <!-- Multi-Tone Angled Background Partitions -->
+    <div class="position-absolute top-0 start-0 w-100 pointer-events-none" style="height: 35%; background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); z-index: 1; clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);"></div>
+    <div class="position-absolute top-30 start-0 w-100 pointer-events-none" style="top: 30%; height: 35%; background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); z-index: 1; clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0 100%);"></div>
+    <div class="position-absolute bottom-0 start-0 w-100 pointer-events-none" style="height: 40%; background: linear-gradient(135deg, #fce3dd 0%, #faece7 100%); z-index: 1; clip-path: polygon(0 15%, 100% 0%, 100% 100%, 0 100%);"></div>
+
+    <!-- Animated Ambient Glowing Background Assets -->
+    <div class="position-absolute rounded-circle pointer-events-none"
+        style="top: 10%; right: -5%; width: 420px; height: 420px; background: rgba(255, 255, 255, 0.6); filter: blur(90px); z-index: 2; animation: floatGentle 7s ease-in-out infinite;">
+    </div>
+    <div class="position-absolute rounded-circle pointer-events-none"
+        style="top: 45%; left: -5%; width: 420px; height: 420px; background: rgba(255, 255, 255, 0.7); filter: blur(90px); z-index: 2; animation: floatGentle 8s ease-in-out infinite alternate;">
+    </div>
+    <div class="position-absolute rounded-circle pointer-events-none"
+        style="bottom: 10%; right: -5%; width: 480px; height: 480px; background: rgba(255, 255, 255, 0.6); filter: blur(100px); z-index: 2; animation: floatGentle 9s ease-in-out infinite;">
+    </div>
+
+    <div class="container position-relative py-5" style="z-index: 3;">
+
+        <!-- Section Header -->
+        <div class="text-center mb-5 pb-2" data-aos="fade-down" data-aos-duration="1000">
+            <span class="badge px-4 py-2 mb-3 rounded-pill shadow-sm text-uppercase"
+                style="background-color: #ffffff; color: #6b3e2e; font-weight: 700; border: 1.5px solid rgba(138, 196, 183, 0.5); letter-spacing: 1.5px;">
+                <i class="fa-solid fa-ice-cream me-2" style="color: #f48269;"></i> THE ULTIMATE INDULGENCE
+            </span>
+
+            <h1 class="display-3 fw-bold mb-3" style="color: #6b3e2e; letter-spacing: -1px;">
+                Crafted With Passion & <span
+                    style="background: linear-gradient(135deg, #f48269 0%, #c45d43 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pure
+                    Velvet Magic</span>
+            </h1>
+            <p class="mx-auto" style="max-width: 700px; font-size: 1.15rem; line-height: 1.8; color: #5a4036;">
+                Step into an exquisite world where vintage Mumbai heritage recipes blend seamlessly with modern
+                dessert luxury, creating unforgettable velvety textures in every scoop.
+            </p>
+        </div>
+
+        <!-- Dynamic Asymmetric Bento-Style Showcase Cards -->
+        <div class="row g-4 align-items-center mb-5">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-white"
+                    style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); padding: 12px; transition: transform 0.4s ease, box-shadow 0.4s ease;"
+                    onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 20px 40px rgba(107,62,46,0.15)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div class="overflow-hidden rounded-3 position-relative" style="height: 340px;">
+                        <img src="images/about2.jfif" alt="Artisan Ice Cream Cones"
+                            class="w-100 h-100 object-fit-cover" style="transition: transform 0.7s ease;"
+                            onmouseover="this.style.transform='scale(1.06)';"
+                            onmouseout="this.style.transform='scale(1)';">
+                        <div class="position-absolute top-0 start-0 w-100 h-100"
+                            style="background: linear-gradient(to top, rgba(107,62,46,0.55) 0%, transparent 60%);">
+                        </div>
+                    </div>
+                    <div class="position-absolute bottom-0 start-0 p-4 text-white z-2">
+                        <span class="badge px-3 py-1 mb-2 rounded-pill fw-semibold"
+                            style="background-color: #f48269; color: #fff;">Heritage Recipe</span>
+                        <h4 class="fw-bold mb-0 text-white">Signature Waffle Cones</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-white p-4 h-100 d-flex flex-column justify-content-center"
+                    style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); min-height: 364px; transition: transform 0.4s ease, box-shadow 0.4s ease;"
+                    onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 20px 40px rgba(244,130,105,0.2)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div class="position-absolute top-0 end-0 p-4 opacity-25">
+                        <i class="fa-solid fa-heart-pulse display-3" style="color: #f48269;"></i>
+                    </div>
+                    <div class="position-relative z-2">
+                        <span class="badge px-3 py-1 mb-3 rounded-pill fw-semibold"
+                            style="background-color: #f48269; color: #fff;">Handcrafted Excellence</span>
+                        <h3 class="fw-bold mb-3" style="color: #6b3e2e;">Fresh Berry Infusions & More</h3>
+                        <p class="mb-4 text-muted" style="color: #5a4036 !important; line-height: 1.7;">
+                            Every single bowl is a masterpiece blending farm-fresh cream, antioxidant-rich wild
+                            berries, and organic syrups. Prepared fresh every morning to deliver a luxurious burst
+                            of flavor in every bite.
+                        </p>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center fw-semibold small" style="color: #6b3e2e;">
+                                <i class="fa-solid fa-circle-check me-2" style="color: #f48269;"></i> 100% Natural Fruits
+                            </div>
+                            <div class="d-flex align-items-center fw-semibold small" style="color: #6b3e2e;">
+                                <i class="fa-solid fa-circle-check me-2" style="color: #f48269;"></i> Zero Preservatives
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extended Rich Content Details and Philosophy Cards -->
+        <div class="row g-5 align-items-center mb-5">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                <div class="p-5 rounded-4 border-start border-5 shadow-lg"
+                    style="border-color: #f48269 !important; background: rgba(255, 255, 255, 0.95) !important;">
+                    <h3 class="fw-bold mb-4" style="color: #6b3e2e;">The Old Mumbai Philosophy</h3>
+                    <p class="mb-4" style="line-height: 1.8; color: #5a4036;">
+                        Our journey began with a fierce commitment: absolute purity and rich complex flavor
+                        notes. We source our milk from free-roaming dairy cattle, combining organic cane sugars,
+                        natural fruit extracts, and rich aromatic spices to bring back authentic nostalgia.
+                    </p>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="d-flex align-items-center p-2 rounded-3" style="transition: transform 0.2s ease;"
+                            onmouseover="this.style.transform='translateX(6px)'"
+                            onmouseout="this.style.transform='translateX(0)'">
+                            <span class="fw-semibold" style="color: #6b3e2e;"><i
+                                    class="fa-solid fa-circle-check me-3 fs-5" style="color: #f48269;"></i>Zero synthetic
+                                food colorings or artificial additives</span>
+                        </div>
+                        <div class="d-flex align-items-center p-2 rounded-3" style="transition: transform 0.2s ease;"
+                            onmouseover="this.style.transform='translateX(6px)'"
+                            onmouseout="this.style.transform='translateX(0)'">
+                            <span class="fw-semibold" style="color: #6b3e2e;"><i
+                                    class="fa-solid fa-circle-check me-3 fs-5" style="color: #f48269;"></i>Hand-ground
+                                cardamom, saffron, and roasted pistachios</span>
+                        </div>
+                        <div class="d-flex align-items-center p-2 rounded-3" style="transition: transform 0.2s ease;"
+                            onmouseover="this.style.transform='translateX(6px)'"
+                            onmouseout="this.style.transform='translateX(0)'">
+                            <span class="fw-semibold" style="color: #6b3e2e;"><i
+                                    class="fa-solid fa-circle-check me-3 fs-5" style="color: #f48269;"></i>Temperature-locked
+                                cooling for optimal velvety texture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                <div class="position-relative rounded-4 overflow-hidden shadow-lg border border-white p-2"
+                    style="background: rgba(255, 255, 255, 0.95);">
+                    <img src="images/about3.jfif" alt="Ice Cream Scoops Close Up"
+                        class="img-fluid rounded-3 w-100" style="max-height: 420px; object-fit: cover;">
+                    <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 bg-white px-4 py-2 rounded-pill shadow-sm border border-light fw-bold"
+                        style="color: #6b3e2e;">
+                        <i class="fa-solid fa-bowl-food me-2" style="color: #f48269;"></i> Slow-Churned Daily Fresh
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Feature Cards -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="p-4 rounded-4 h-100 bg-white border border-light shadow-lg text-center"
+                    style="transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(107,62,46,0.12)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                        style="width: 70px; height: 70px; background-color: #e0f2f1; color: #26a69a;">
+                        <i class="fa-solid fa-seedling fs-3"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #6b3e2e;">100% Organic Sourcing</h4>
+                    <p class="small mb-0" style="color: #5a4036;">We work hand in hand with certified regional dairy
+                        farms to ensure clean, sustainable, and hormone-free milk ingredients.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="p-4 rounded-4 h-100 bg-white border border-light shadow-lg text-center"
+                    style="transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(107,62,46,0.12)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                        style="width: 70px; height: 70px; background-color: #fce3dd; color: #f48269;">
+                        <i class="fa-solid fa-fire-flame-curved fs-3"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #6b3e2e;">Historic Street Secrets</h4>
+                    <p class="small mb-0" style="color: #5a4036;">Our recipes mirror historic dessert traditions carried
+                        down through generations from the bustling lanes of old Bombay.</p>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="p-4 rounded-4 h-100 bg-white border border-light shadow-lg text-center"
+                    style="transition: all 0.3s ease;"
+                    onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px rgba(107,62,46,0.12)';"
+                    onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
+                    <div class="d-inline-flex align-items-center justify-content-center rounded-circle mb-3"
+                        style="width: 70px; height: 70px; background-color: #fff8e1; color: #ffb300;">
+                        <i class="fa-solid fa-mug-hot fs-3"></i>
+                    </div>
+                    <h4 class="fw-bold mb-2" style="color: #6b3e2e;">Micro-Batch Churning</h4>
+                    <p class="small mb-0" style="color: #5a4036;">Slow-frozen in small quantities daily to guarantee the
+                        ultimate smooth creaminess and peak flavor concentration.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div class="position-relative rounded-5 overflow-hidden shadow-lg p-4 p-lg-5"
+            style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border: 2px solid rgba(244, 130, 105, 0.4);"
+            data-aos="zoom-in" data-aos-duration="1000">
+
+            <!-- Floating Decorative Background Orbs -->
+            <div class="position-absolute rounded-circle pointer-events-none"
+                style="top: -50px; right: -50px; width: 250px; height: 250px; background: rgba(244, 130, 105, 0.25); filter: blur(40px); animation: floatGentle 6s ease-in-out infinite;">
+            </div>
+            <div class="position-absolute rounded-circle pointer-events-none"
+                style="bottom: -50px; left: -50px; width: 250px; height: 250px; background: rgba(138, 196, 183, 0.25); filter: blur(40px); animation: floatGentle 8s ease-in-out infinite alternate;">
+            </div>
+
+            <div class="row align-items-center position-relative z-2 g-5">
+
+                <!-- Left Column Content -->
+                <div class="col-lg-7 text-center text-lg-start">
+                    <span class="badge px-4 py-2 mb-3 rounded-pill text-uppercase tracking-wider fw-bold shadow-sm"
+                        style="background: #fce3dd; color: #6b3e2e; border: 1px solid rgba(244, 130, 105, 0.5);">
+                        <i class="fa-solid fa-ice-cream me-2 text-danger animate-pulse"></i> Limited Time Special Scoops
+                    </span>
+
+                    <h2 class="fw-bold display-5 mb-3" style="color: #6b3e2e; letter-spacing: -1px;">
+                        Craving Something <span
+                            style="background: linear-gradient(135deg, #f48269 0%, #d65476 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Sweet
+                            & Refreshing</span> Today?
+                    </h2>
+
+                    <p class="lead mb-4 fs-6" style="color: #5a4036; line-height: 1.8;">
+                        Immerse your senses in our handcrafted flavor menu. From royal saffron-pistachio to tangy
+                        Alphonso mango creations, treat yourself to the ultimate dessert experience tailored for true
+                        connoisseurs!
+                    </p>
+
+                    <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                        <a href="flavors.html" class="btn btn-lg px-5 py-3 fw-bold rounded-pill shadow-sm"
+                            style="background-color: #f48269; color: #fff; transition: all 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 25px rgba(244,130,105,0.4)';"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                            Explore Our Flavors <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-lg px-4 py-3 fw-semibold rounded-pill shadow-sm"
+                            style="background-color: #ffffff; color: #6b3e2e; border: 1px solid rgba(107, 62, 46, 0.15); transition: all 0.3s ease;"
+                            onmouseover="this.style.transform='translateY(-3px)'; this.style.backgroundColor='#fce3dd';"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.backgroundColor='#ffffff';">
+                            <i class="fa-solid fa-location-dot me-2" style="color: #d65476;"></i> Find a Parlor
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column Image Showcase -->
+                <div class="col-lg-5 text-center">
+                    <div class="position-relative d-inline-block p-2 rounded-4"
+                        style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.8);">
+                        <!-- Floating Image with Glowing Animation -->
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=600&q=80"
+                            alt="Delicious Ice Cream Sundae" class="img-fluid rounded-4 shadow"
+                            style="max-height: 300px; width: 100%; object-fit: cover; border: 3px solid rgba(244, 130, 105, 0.4); animation: floatGentle 5s ease-in-out infinite;">
+
+                        <!-- Floating Badge Overlay -->
+                        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-n3 bg-white px-4 py-2 rounded-pill shadow border text-brown fw-bold small text-nowrap"
+                            style="color: #6b3e2e;">
+                            <i class="fa-solid fa-star text-warning me-1"></i> Rated #1 Artisanal Treat
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer matching the exact reference style and brand colors -->
+    <footer id="contact" style="background-color: #6da79e; color: #fff; padding-top: 60px; padding-bottom: 20px;">
+        <div class="container" data-aos="fade-in" data-aos-duration="1000">
+            <div class="row g-4 mb-4">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-3">
+                    <h3 class="fw-bold mb-3" style="color: #fff; font-size: 1.5rem;">
+                        <i class="fa-solid fa-ice-cream me-2" style="color: #f49b81;"></i>Old Mumbai Icecream
+                    </h3>
+                    <p class="text-white mb-2" style="opacity: 0.9;">Making the world a sweeter place one scoop at a
+                        time.</p>
+                    <p class="text-white mb-2" style="opacity: 0.9;">123 Ice Cream Lane, Dessert City, DC 12345</p>
+                    <p class="text-white mb-2" style="opacity: 0.9;">Email: hello@oldmumbai.com</p>
+                    <p class="text-white mb-2" style="opacity: 0.9;">Phone: (555) 123-4567</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3" style="color: #fff;">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white text-decoration-none"
+                                style="opacity: 0.9;">Home</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white text-decoration-none"
+                                style="opacity: 0.9;">About Us</a></li>
+                        <li class="mb-2"><a href="index.html#services" class="text-white text-decoration-none"
+                                style="opacity: 0.9;">Flavors</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none"
+                                style="opacity: 0.9;">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Newsletter & Social Media -->
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3" style="color: #fff;">Stay Connected</h5>
+                    <p class="text-white mb-3" style="opacity: 0.9;">Subscribe to get secret menu updates and sweet
+                        discounts.</p>
+                    <div class="input-group mb-3 shadow-sm rounded-pill overflow-hidden"
+                        style="background-color: rgba(255, 255, 255, 0.2);">
+                        <input type="email"
+                            class="form-control border-0 shadow-none ps-3 bg-transparent text-white placeholder-white"
+                            placeholder="Enter your email" style="color: #fff;">
+                        <button class="btn px-4 fw-semibold border-0 text-white" type="button"
+                            style="background-color: #f49b81;">Join</button>
+                    </div>
+                    <!-- Social Media Icons -->
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white fs-5 text-decoration-none" style="opacity: 0.9;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-white fs-5 text-decoration-none" style="opacity: 0.9;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white fs-5 text-decoration-none" style="opacity: 0.9;"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white fs-5 text-decoration-none" style="opacity: 0.9;"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Interactive Map -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3" style="color: #fff;">Find Us</h5>
+                    <div
+                        class="ratio ratio-16x9 rounded-4 shadow-sm overflow-hidden border border-white border-opacity-25">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459392!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a6ae072e!2sTimes+Square!5e0!3m2!1en!2sus!4v1670971548255!5m2!1en!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white opacity-25 mt-4 mb-3">
+
+            <!-- Compact & Centered Copyright Bar -->
+            <div class="text-center py-2 text-white small" style="opacity: 0.85;">
+                <p class="mb-1">&copy; 2026 Old Mumbai Icecream Shop & Company. All rights reserved.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="text-white text-decoration-none" style="opacity: 0.85;">Privacy</a>
+                    <span>&bull;</span>
+                    <a href="#" class="text-white text-decoration-none" style="opacity: 0.85;">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 900
+        });
+    </script>
+</body>
+
+</html>

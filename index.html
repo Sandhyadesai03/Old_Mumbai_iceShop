@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mello - Delicious Ice Cream & Sweet Moments</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-brown: #9E4755;
+            /* Softened deep rose/pink tone replacing heavy brown */
+            --accent-pink: #F6A18D;
+            --light-pink: #F8D7EA;
+            --deep-pink: #E87A90;
+            --mint-aqua: #58bfba;
+            --mint-light: #e6f6f5;
+            --bg-cream: #FFFDF9;
+        }
+
+        body {
+            font-family: 'Fredoka', cursive, sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--primary-brown);
+            overflow-x: hidden;
+        }
+/* ===========================
+   NAVBAR
+=========================== */
+
+header.site-header{
+    background:#8BC3BE;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    padding:14px 0;
+}
+
+/* Logo */
+.navbar-brand{
+    color:#A3464F !important;
+    font-size:2rem;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    letter-spacing:-0.5px;
+}
+
+.navbar-brand i{
+    color:#F79B85;
+    margin-right:10px;
+}
+
+/* Navigation */
+.navbar-nav{
+    align-items:center;
+}
+
+.navbar-nav .nav-item{
+    margin:0 10px;
+}
+
+.navbar-nav .nav-link{
+    color:#A3464F !important;
+    font-size:18px;
+    font-weight:600;
+    padding:10px 14px !important;
+    position:relative;
+    transition:.3s;
+}
+
+/* Underline */
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:4px;
+    width:0;
+    height:2px;
+    background:#F79B85;
+    transform:translateX(-50%);
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#8A3845 !important;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width:70%;
+}
+
+/* Order Button */
+.btn-order-online{
+    background:#F79B85;
+    color:#fff !important;
+    border:none;
+    border-radius:50px;
+    padding:10px 28px;
+    font-weight:700;
+    box-shadow:none;
+    transition:.3s;
+}
+
+.btn-order-online:hover{
+    background:#A3464F;
+    color:#fff !important;
+}
+
+/* Toggle Button */
+.navbar-toggler{
+    border:none;
+    background:rgba(255,255,255,.3);
+    padding:7px 10px;
+    border-radius:10px;
+}
+
+.navbar-toggler:focus{
+    box-shadow:none;
+}
+
+/* Mobile */
+@media(max-width:991.98px){
+
+    .navbar-collapse{
+        background:#8BC3BE;
+        padding:20px;
+        margin-top:10px;
+        border-radius:12px;
+    }
+
+    .navbar-nav{
+        align-items:flex-start;
+    }
+
+    .navbar-nav .nav-item{
+        width:100%;
+        margin:5px 0;
+    }
+
+    .navbar-nav .nav-link{
+        width:100%;
+        text-align:left;
+        font-size:17px;
+    }
+
+    .btn-order-online{
+        width:100%;
+        margin-top:15px;
+    }
+}
+
+        /* Buttons */
+        .btn-custom-pink {
+            background-color: var(--accent-pink);
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 600;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom-pink:hover {
+            background-color: var(--deep-pink);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(246, 161, 141, 0.4);
+        }
+
+        .btn-outline-pink {
+            border: 2px solid var(--primary-brown);
+            color: var(--primary-brown);
+            border-radius: 50px;
+            padding: 10px 25px;
+            font-weight: 600;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-pink:hover {
+            background-color: var(--primary-brown);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            padding: 90px 0;
+            background: linear-gradient(135deg, rgba(230, 246, 245, 0.9) 0%, rgba(255, 253, 249, 0.95) 100%),
+                url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        #three-container {
+            width: 100%;
+            height: 420px;
+            position: relative;
+            filter: drop-shadow(0 15px 25px rgba(158, 71, 85, 0.15));
+        }
+
+        /* Stat Cards */
+        .stat-card {
+            background-color: var(--mint-aqua);
+            color: #fff;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(88, 191, 186, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(88, 191, 186, 0.35);
+        }
+
+        .stat-card.pink {
+            background-color: var(--accent-pink);
+            box-shadow: 0 10px 30px rgba(246, 161, 141, 0.25);
+        }
+
+        .stat-card.pink:hover {
+            box-shadow: 0 15px 35px rgba(246, 161, 141, 0.35);
+        }
+
+        /* Services Cards */
+        .services-section {
+            position: relative;
+            background: linear-gradient(to bottom, var(--mint-light), #f0fbfc);
+            padding: 100px 0;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 28px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(158, 71, 85, 0.05);
+            border: 2px solid transparent;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--mint-aqua);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(158, 71, 85, 0.1);
+        }
+
+        .service-img-container {
+            background-color: var(--mint-light);
+            border-radius: 22px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .service-img-container img {
+            max-height: 160px;
+            transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .service-card:hover img {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Gallery Grid Section */
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(158, 71, 85, 0.08);
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(158, 71, 85, 0.8));
+            color: #fff;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(158, 71, 85, 0.06);
+            border-left: 5px solid var(--accent-pink);
+        }
+
+        /* Wave SVG Divider */
+        .wave-divider {
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 90px;
+        }
+
+        .wave-divider path {
+            fill: var(--mint-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-brown);
+            color: #fff;
+            padding: 60px 0 20px 0;
+        }
+
+        footer a {
+            color: var(--accent-pink);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* --- Hero Section Two-Color Split Styling --- */
+        .hero-section {
+            min-height: 90vh;
+            position: relative;
+        }
+
+        /* Left background (Cream) */
+        .hero-bg-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 55%;
+            /* Width for desktop */
+            height: 100%;
+            background-color: var(--bg-cream);
+            /* #FFFDF9 */
+            z-index: 1;
+        }
+
+        /* Right background (Mint) */
+        .hero-bg-right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 45%;
+            /* Width for desktop */
+            height: 100%;
+            background-color: var(--mint-light);
+            /* #e6f6f5 */
+            z-index: 1;
+        }
+
+        /* Carousel styling */
+        .carousel.shadow-lg {
+            box-shadow: 0 1rem 3rem rgba(88, 41, 33, 0.175) !important;
+        }
+
+        .carousel-inner.rounded-4 {
+            border-radius: 1.5rem !important;
+        }
+
+        /* Responsive Adjustments for the Split Background */
+        @media (max-width: 991px) {
+
+            .hero-bg-left,
+            .hero-bg-right {
+                width: 100%;
+                /* Full width on mobile */
+                height: 50%;
+                /* Split top/bottom on mobile */
+            }
+
+            .hero-bg-right {
+                top: 50%;
+                /* Bottom half */
+            }
+
+            .hero-section .row {
+                flex-direction: column-reverse;
+                /* Image on top, text on bottom for mobile */
+            }
+
+            .col-lg-5.py-5,
+            .col-lg-6.py-5 {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            .carousel-item img {
+                height: 350px !important;
+                /* Smaller images on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Responsive Navigation Bar (Matched to Footer Color) -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="#">
+                <i class="fa-solid fa-ice-cream me-2" style="color: var(--accent-pink);"></i>Old Mumbai Icecream
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center pt-3 pt-lg-0 pb-3 pb-lg-0">
+                    <li class="nav-item mb-2 mb-lg-0"><a href="index.html" class="nav-link text-white-90 px-3">Home</a></li>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="about.html" class="nav-link text-white-90 px-3">About Us</a>
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="flavors.html"
+                            class="nav-link text-white-90 px-3">Flavors</a></li>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="servises.html" class="nav-link text-white-90 px-3">Services</a>
+                    </li>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="contact.html" class="nav-link text-white-90 px-3">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="shop.html" class="btn btn-custom-pink px-4 py-2 shadow-sm w-100 w-lg-auto">Order
+                            Online</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Custom Styles for Navbar to Match Footer -->
+    <style>
+        .custom-navbar {
+            background-color: #8ec8c3;
+            /* Exact same color as your footer */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            /* Adds a subtle, attractive drop shadow */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .custom-navbar .nav-link {
+            font-weight: 500;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #ffffff !important;
+            transform: translateY(-1px);
+        }
+
+        /* Customize the mobile toggler icon to look clean on the teal background */
+        .custom-navbar .navbar-toggler {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .custom-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+    </style>
+
+    <!-- Hero Section (Chocolate & Vibrant Pink Split & Carousel) -->
+    <section class="hero-section d-flex align-items-center position-relative overflow-hidden">
+
+        <!-- Split Background Definitions (CSS handles colors now) -->
+        <div class="hero-bg-left"></div>
+        <div class="hero-bg-right"></div>
+
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center g-0">
+
+                <!-- Text Content (Left Side) -->
+                <div class="col-lg-5 text-center text-lg-start py-5" data-aos="fade-right" data-aos-duration="1000">
+                    <span class="badge px-4 py-2 mb-3 rounded-pill shadow-sm"
+                        style="background:#e46799; color:#ffffff; font-weight:600;">
+                        <i class="fa-solid fa-certificate me-2"></i>Premium Indulgence
+                    </span>
+
+                    <h1 class="display-3 fw-bold mb-4 lh-sm">
+                        Craving <br> <span style="color: var(--vibrant-pink);">Wicked Flavor?</span>
+                    </h1>
+
+                    <p class="lead mb-5">
+                        Dive into our ultra-rich, handcrafted scoops. Made with the finest cocoa and freshest mix-ins
+                        for a truly decadent experience.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                        <!-- Uses the redefined .btn-custom-pink in CSS -->
+                        <a href="shop.html" class="btn btn-custom-pink btn-lg px-5 shadow-sm">
+                            See Our Menu
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Image Carousel (Right Side) -->
+                <div class="col-lg-6 offset-lg-1 py-5" data-aos="fade-left" data-aos-duration="1000"
+                    data-aos-delay="200">
+                    <div id="heroCarousel" class="carousel slide carousel-fade shadow-lg" data-bs-ride="carousel"
+                        data-bs-interval="4000">
+
+                        <!-- Indicators -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+
+                        <!-- Carousel Inner -->
+                        <div class="carousel-inner rounded-4">
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active">
+                                <img src="images/hero1.jfif" class="d-block w-100" alt="Decadent chocolate ice cream"
+                                    style="height: 550px; object-fit: cover;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Triple Chocolate Fudge</h5>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <img src="images/hero22.jfif" class="d-block w-100" alt="Strawberry swirl ice cream"
+                                    style="height: 550px; object-fit: cover;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Pink Velvet Berry</h5>
+                                </div>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-item">
+                                <img src="images/hero3.jfif" class="d-block w-100" alt="Cookies and cream gelato"
+                                    style="height: 550px; object-fit: cover;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Midnight Cookies & Cream</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Achievements Section -->
+    <section class="py-5 bg-white overflow-hidden" id="about">
+        <div class="container py-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="900">
+                    <h2 class="fw-bold mb-3 display-6">Behind Our Growing Success</h2>
+                    <p class="text-muted mb-4">Old Mumbai Shop was born out of a profound passion for pure, authentic
+                        dessert culture. Every batch of our ice cream is slow-churned daily using farm-fresh milk,
+                        organic cane sugar, and hand-selected local ingredients to bring a smile to every face.</p>
+                    <a href="about.html" class="btn btn-custom-pink">Learn More</a>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="fw-bold m-0 display-5">90K+</h2>
+                            <i class="fa-solid fa-users fa-2x opacity-75"></i>
+                        </div>
+                        <p class="mb-0 fw-medium">Loyalty members active globally.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="250">
+                    <div class="stat-card pink">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h2 class="fw-bold m-0 display-5">25+</h2>
+                            <i class="fa-solid fa-award fa-2x opacity-75"></i>
+                        </div>
+                        <p class="mb-0 fw-medium">Years crafting delightful ice cream.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+            </path>
+        </svg>
+    </div>
+
+    <!-- Signature Services / Flavors Section -->
+    <section class="services-section" id="services">
+        <div class="container py-4">
+            <div class="row align-items-center mb-5" data-aos="fade-down" data-aos-duration="800">
+                <div class="col-lg-7">
+                    <span class="badge px-3 py-2 mb-2 rounded-pill bg-white text-muted shadow-sm">OUR SIGNATURE
+                        FLAVORS</span>
+                    <h2 class="fw-bold display-6">Explore Our Signature Services For Every Sweet Moment</h2>
+                </div>
+                <div class="col-lg-5">
+                    <p class="text-muted">Handcrafted with unique combinations and rich textures designed to melt in
+                        your mouth. Discover our rotating seasonal specials today.</p>
+                    <a href="#" class="btn btn-outline-pink mt-2">Discover more</a>
+                </div>
+            </div>
+
+            <!-- Service/Product Grid -->
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-img-container">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80"
+                                alt="Berry Sundae" class="img-fluid rounded-circle shadow-sm"
+                                style="width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+                        <h4 class="fw-bold">Wild Berry Sundae</h4>
+                        <p class="text-muted small">Fresh blackberries, blueberries, and whipped cream topping over
+                            vanilla bean ice cream.</p>
+                        <a href="#" class="btn btn-custom-pink btn-sm w-100 mt-2">Order Scoop</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-img-container" style="background-color: var(--light-pink);">
+                            <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=400&q=80"
+                                alt="Waffle Cone Supreme" class="img-fluid rounded-circle shadow-sm"
+                                style="width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+                        <h4 class="fw-bold">Crispy Waffle Cone</h4>
+                        <p class="text-muted small">Golden crunchy waffle cone filled with double chocolate fudge and
+                            caramel drizzle.</p>
+                        <a href="#" class="btn btn-custom-pink btn-sm w-100 mt-2">Order Scoop</a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-img-container" style="background-color: #ffe8d6;">
+                            <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?auto=format&fit=crop&w=400&q=80"
+                                alt="Party Catering" class="img-fluid rounded-circle shadow-sm"
+                                style="width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+                        <h4 class="fw-bold">Party & Event Catering</h4>
+                        <p class="text-muted small">Bring the Mello ice cream cart to your weddings, birthdays, and
+                            special celebrations.</p>
+                        <a href="#" class="btn btn-custom-pink btn-sm w-100 mt-2">Book Event</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Photo Gallery Section -->
+    <section class="py-5 bg-white" id="gallery">
+        <div class="container py-4">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge px-3 py-2 mb-2 rounded-pill"
+                    style="background-color: var(--light-pink); color: var(--primary-brown);">MOMENTS AT OLD MUMBAI ICECREAM</span>
+                <h2 class="fw-bold display-6">Sweet Memories Gallery</h2>
+                <p class="text-muted">Take a peek into our parlors and see how we serve happiness daily.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="images/home2.jfif" alt="Ice Cream" class="img-fluid rounded shadow">
+                        <div class="gallery-overlay">
+                            <h6 class="fw-bold mb-0">Rainbow Scoops</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="images/home1.jfif" alt="Ice Cream" class="img-fluid rounded shadow">
+                        <div class="gallery-overlay">
+                            <h6 class="fw-bold mb-0">Chocolate Bliss</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="images/home3.jfif" alt="Ice Cream" class="img-fluid rounded shadow">
+                        <div class="gallery-overlay">
+                            <h6 class="fw-bold mb-0">Summer Vibes</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-item">
+                        <img src="images/heroimg.jpg" alt="Sweet treat" class="img-fluid rounded shadow">
+                        <div class="gallery-overlay">
+                            <h6 class="fw-bold mb-0">Fresh Toppings</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="contact" style="background-color: #61ada7; color: #a75d5d; padding-top: 60px; padding-bottom: 20px;">
+        <div class="container" data-aos="fade-in" data-aos-duration="1000">
+            <div class="row g-4 mb-4">
+                <!-- Column 1: Brand -->
+                <div class="col-lg-3">
+                    <h3 class="fw-bold mb-3" style="color: #fff;">
+                        <i class="fa-solid fa-ice-cream me-2" style="color: var(--accent-pink);"></i>Old Mumbai Icecream
+                    </h3>
+                    <p class="text-white-90">Making the world a sweeter place one scoop at a time.</p>
+                    <p class="text-white-90">123 Ice Cream Lane, Dessert City, DC 12345</p>
+                    <p class="text-white-90">Email: hello@oldmumbai.com</p>
+                    <p class="text-white-90">Phone: (555) 123-4567</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2">
+                    <h5 class="fw-bold mb-3" style="color: #fff;">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-90 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white-90 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white-90 text-decoration-none">Flavors</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white-90 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Newsletter & Social Media -->
+                <div class="col-lg-3">
+                    <h5 class="fw-bold mb-3" style="color: #fff;">Stay Connected</h5>
+                    <p class="text-white-90">Subscribe to get secret menu updates and sweet discounts.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control border-0" placeholder="Enter your email"
+                            style="background-color: rgba(255, 255, 255, 0.2); color: #fff;">
+                        <button class="btn btn-custom-pink border-0" type="button"
+                            style="background-color: var(--accent-pink); color: #fff;">Join</button>
+                    </div>
+                    <!-- Social Media Icons -->
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="text-white-90 fs-5 text-decoration-none"><i
+                                class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Interactive Map -->
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3" style="color: #fff;">Find Us</h5>
+                    <div class="ratio ratio-16x9 rounded shadow-sm overflow-hidden">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968459392!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a6ae072e!2sTimes+Square!5e0!3m2!1en!2sus!4v1670971548255!5m2!1en!2sus"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-down-header">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white-10 mt-4 mb-2">
+
+            <!-- Compact, Attractive & Centered Copyright Bar -->
+            <div class="text-center py-2 text-white-70 small">
+                <p class="mb-1">&copy; 2026 Mello Ice Cream Shop & Company. All rights reserved.</p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="#" class="text-white-70 text-decoration-none">Privacy</a>
+                    <span>&bull;</span>
+                    <a href="#" class="text-white-70 text-decoration-none">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom CSS for Footer Elements -->
+    <style>
+        .text-white-90 {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .text-white-70 {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .text-white-70:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .border-white-10 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+    </style>
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Three.js Library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- AOS Animation Library JS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        // Initialize AOS (Animate on Scroll) sliding effects
+        AOS.init({
+            once: true,
+            offset: 80,
+        });
+
+        // Three.js 3D Interactive Floating Ice Cream Cones Animation
+        const container = document.getElementById('three-container');
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.z = 6;
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.DirectionalLight(0xffffff, 1.5);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const iceCreamGroup = new THREE.Group();
+        scene.add(iceCreamGroup);
+
+        const coneGeometry = new THREE.ConeGeometry(0.8, 2, 16);
+        const coneMaterial = new THREE.MeshStandardMaterial({ color: 0xc69448, roughness: 0.7 });
+        const cone = new THREE.Mesh(coneGeometry, coneMaterial);
+        cone.position.y = -1;
+        cone.rotation.x = Math.PI;
+        iceCreamGroup.add(cone);
+
+        const scoopGeometry = new THREE.SphereGeometry(0.85, 32, 32);
+
+        const scoopMaterial1 = new THREE.MeshStandardMaterial({ color: 0xF6A18D, roughness: 0.3 });
+        const scoop1 = new THREE.Mesh(scoopGeometry, scoopMaterial1);
+        scoop1.position.y = 0.4;
+        iceCreamGroup.add(scoop1);
+
+        const scoopMaterial2 = new THREE.MeshStandardMaterial({ color: 0x58bfba, roughness: 0.3 });
+        const scoop2 = new THREE.Mesh(scoopGeometry, scoopMaterial2);
+        scoop2.scale.set(0.8, 0.8, 0.8);
+        scoop2.position.y = 1.5;
+        iceCreamGroup.add(scoop2);
+
+        let clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            let elapsedTime = clock.getElapsedTime();
+            iceCreamGroup.rotation.y = elapsedTime * 0.6;
+            iceCreamGroup.position.y = Math.sin(elapsedTime * 2) * 0.2;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        
+    </script>
+</body>
+
+</html>

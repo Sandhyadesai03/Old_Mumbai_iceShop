@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Artisanal Flavors | Old Mumbai Icecream</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* Advanced Custom Animations & Styling matching reference screenshot */
+        @keyframes floatGentle {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            50% {
+                transform: translateY(-15px) rotate(2deg) scale(1.03);
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #5a4036;
+            overflow-x: hidden;
+            background-color: #ffffff;
+        }
+
+        /* ===========================
+   NAVBAR
+=========================== */
+
+header.site-header{
+    background:#8BC3BE;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    padding:14px 0;
+}
+
+/* Logo */
+.navbar-brand{
+    color:#A3464F !important;
+    font-size:2rem;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    letter-spacing:-0.5px;
+}
+
+.navbar-brand i{
+    color:#F79B85;
+    margin-right:10px;
+}
+
+/* Navigation */
+.navbar-nav{
+    align-items:center;
+}
+
+.navbar-nav .nav-item{
+    margin:0 10px;
+}
+
+.navbar-nav .nav-link{
+    color:#A3464F !important;
+    font-size:18px;
+    font-weight:600;
+    padding:10px 14px !important;
+    position:relative;
+    transition:.3s;
+}
+
+/* Underline */
+.navbar-nav .nav-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:4px;
+    width:0;
+    height:2px;
+    background:#F79B85;
+    transform:translateX(-50%);
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color:#8A3845 !important;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width:70%;
+}
+
+/* Order Button */
+.btn-order-online{
+    background:#F79B85;
+    color:#fff !important;
+    border:none;
+    border-radius:50px;
+    padding:10px 28px;
+    font-weight:700;
+    box-shadow:none;
+    transition:.3s;
+}
+
+.btn-order-online:hover{
+    background:#A3464F;
+    color:#fff !important;
+}
+
+/* Toggle Button */
+.navbar-toggler{
+    border:none;
+    background:rgba(255,255,255,.3);
+    padding:7px 10px;
+    border-radius:10px;
+}
+
+.navbar-toggler:focus{
+    box-shadow:none;
+}
+
+/* Mobile */
+@media(max-width:991.98px){
+
+    .navbar-collapse{
+        background:#8BC3BE;
+        padding:20px;
+        margin-top:10px;
+        border-radius:12px;
+    }
+
+    .navbar-nav{
+        align-items:flex-start;
+    }
+
+    .navbar-nav .nav-item{
+        width:100%;
+        margin:5px 0;
+    }
+
+    .navbar-nav .nav-link{
+        width:100%;
+        text-align:left;
+        font-size:17px;
+    }
+
+    .btn-order-online{
+        width:100%;
+        margin-top:15px;
+    }
+}
+
+        /* Highly Polished Glassmorphism Cards with 3D Depth */
+        .flavor-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(107, 62, 46, 0.08);
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(107, 62, 46, 0.2);
+            border-color: rgba(247, 148, 121, 0.5);
+        }
+
+        .flavor-img-container {
+            overflow: hidden;
+            border-radius: 22px 22px 0 0;
+            height: 270px;
+            position: relative;
+        }
+
+        .flavor-img-container img {
+            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flavor-card:hover .flavor-img-container img {
+            transform: scale(1.12) rotate(1deg);
+        }
+
+        /* Interactive Shimmer Button Effect */
+        .btn-scoop {
+            background: linear-gradient(135deg, #f79479 0%, #d65476 100%);
+            background-size: 200% auto;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(247, 148, 121, 0.35);
+        }
+
+        .btn-scoop:hover {
+            background-position: right center;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(247, 148, 121, 0.5);
+            color: #fff;
+        }
+
+        /* Accurate Footer Match from Reference */
+        footer.site-footer {
+            background-color: #64a69b;
+            color: #ffffff;
+        }
+
+        footer.site-footer h5, 
+        footer.site-footer h6 {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        footer.site-footer a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer.site-footer a:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: #fff;
+            margin-right: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= HEADER & RESPONSIVE NAVBAR ================= -->
+    <header class="site-header sticky-top shadow-sm py-2" style="z-index: 1000;">
+        <nav class="container navbar navbar-expand-lg py-0">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="fa-solid fa-ice-cream me-2" style="color: #f79479;"></i> Old Mumbai Icecream
+            </a>
+            
+            <button class="navbar-toggler border-0 shadow-none text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarContent" aria-controls="mainNavbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainNavbarContent">
+                <ul class="navbar-nav align-items-lg-center gap-lg-1 mt-3 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active fw-bold" href="flavors.html">Flavors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="servises.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <a href="shop.html" class="btn btn-order-online">
+                            Order Online
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= FLAVORS MAIN SECTION ================= -->
+    <section class="py-5 position-relative overflow-hidden" style="background: #ffffff; padding-bottom: 50px !important;">
+
+        <div class="position-absolute top-0 start-0 w-100 pointer-events-none" style="height: 32%; background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%); z-index: 1; clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);"></div>
+        <div class="position-absolute start-0 w-100 pointer-events-none" style="top: 26%; height: 38%; background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); z-index: 1; clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0 100%);"></div>
+        <div class="position-absolute bottom-0 start-0 w-100 pointer-events-none" style="height: 48%; background: linear-gradient(135deg, #fce3dd 0%, #faece7 100%); z-index: 1; clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0 100%);"></div>
+
+        <div class="position-absolute rounded-circle pointer-events-none"
+            style="top: 8%; right: -5%; width: 450px; height: 450px; background: rgba(255, 255, 255, 0.7); filter: blur(100px); z-index: 2; animation: floatGentle 8s ease-in-out infinite;">
+        </div>
+        <div class="position-absolute rounded-circle pointer-events-none"
+            style="top: 42%; left: -8%; width: 500px; height: 500px; background: rgba(255, 255, 255, 0.8); filter: blur(110px); z-index: 2; animation: floatGentle 10s ease-in-out infinite alternate;">
+        </div>
+
+        <div class="container position-relative py-5" style="z-index: 3;">
+
+            <div class="text-center mb-5 pb-3" data-aos="fade-down" data-aos-duration="1000">
+                <span class="badge px-4 py-2 mb-3 rounded-pill shadow-sm text-uppercase"
+                    style="background-color: #ffffff; color: #763b2c; font-weight: 700; border: 1.5px solid rgba(122, 184, 174, 0.6); letter-spacing: 2px;">
+                    <i class="fa-solid fa-wand-magic-sparkles me-2" style="color: #f79479;"></i> SIGNATURE MENU
+                </span>
+
+                <h1 class="display-3 fw-bold mb-3" style="color: #763b2c; letter-spacing: -1px;">
+                    Explore Our <span
+                        style="background: linear-gradient(135deg, #f79479 0%, #c45d43 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Divine
+                        Flavor Collection</span>
+                </h1>
+                <p class="mx-auto" style="max-width: 700px; font-size: 1.15rem; line-height: 1.8; color: #5a4036;">
+                    Hand-churned daily using classic old-Mumbai recipes, organic farm-fresh milk, and pure exotic ingredients for unmatched creaminess.
+                </p>
+            </div>
+
+            <div class="row g-4 mb-0">
+                <!-- Flavor 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <div class="flavor-img-container position-relative">
+                            <img src="images/fl8.jfif" alt="Belgian Dark Chocolate">
+                            <span class="position-absolute top-0 end-0 m-3 badge px-3 py-2 rounded-pill shadow-sm fw-bold" style="background-color: #f79479; color: #fff;">Bestseller</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold mb-0" style="color: #763b2c;">Royal Saffron Pistachio</h4>
+                                <span class="fw-bold fs-5" style="color: #f79479;">₹180</span>
+                            </div>
+                            <p class="small text-muted mb-4 flex-grow-1" style="color: #5a4036 !important;">
+                                Infused with real Kashmiri saffron strands and crushed roasted Iranian pistachios for an aromatic royal treat.
+                            </p>
+                            <button class="btn btn-scoop w-100 py-2 shadow-sm">
+                                <i class="fa-solid fa-cart-plus me-2"></i> Add To Scoop Bowl
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flavor 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <div class="flavor-img-container position-relative">
+                            <img src="images/fl7.jfif" alt="Belgian Dark Chocolate">
+                            <span class="position-absolute top-0 end-0 m-3 badge px-3 py-2 rounded-pill shadow-sm fw-bold" style="background-color: #ffb300; color: #fff;">Seasonal Fresh</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold mb-0" style="color: #763b2c;">Alphonso Mango Velvet</h4>
+                                <span class="fw-bold fs-5" style="color: #f79479;">₹190</span>
+                            </div>
+                            <p class="small text-muted mb-4 flex-grow-1" style="color: #5a4036 !important;">
+                                Made exclusively with rich Ratnagiri Alphonso mango pulp folded smoothly into thick, slow-churned dairy cream.
+                            </p>
+                            <button class="btn btn-scoop w-100 py-2 shadow-sm">
+                                <i class="fa-solid fa-cart-plus me-2"></i> Add To Scoop Bowl
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flavor 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <div class="flavor-img-container position-relative">
+                            <img src="images/fl3.jfif" alt="Belgian Dark Chocolate">
+                            <span class="position-absolute top-0 end-0 m-3 badge px-3 py-2 rounded-pill shadow-sm fw-bold" style="background-color: #763b2c; color: #fff;">Extra Rich</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold mb-0" style="color: #763b2c;">Belgian Dark Fudge</h4>
+                                <span class="fw-bold fs-5" style="color: #f79479;">₹210</span>
+                            </div>
+                            <p class="small text-muted mb-4 flex-grow-1" style="color: #5a4036 !important;">
+                                An intense blend of 70% dark Belgian cocoa chips and heavy fudge swirls designed for absolute chocolate lovers.
+                            </p>
+                            <button class="btn btn-scoop w-100 py-2 shadow-sm">
+                                <i class="fa-solid fa-cart-plus me-2"></i> Add To Scoop Bowl
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Flavor 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <div class="flavor-img-container position-relative">
+                            <img src="images/home1.jfif" alt="Belgian Dark Chocolate">
+                            <span class="position-absolute top-0 end-0 m-3 badge px-3 py-2 rounded-pill shadow-sm fw-bold" style="background-color: #26a69a; color: #fff;">Traditional</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold mb-0" style="color: #763b2c;">Malai Sitaphal Cream</h4>
+                                <span class="fw-bold fs-5" style="color: #f79479;">₹175</span>
+                            </div>
+                            <p class="small text-muted mb-4 flex-grow-1" style="color: #5a4036 !important;">
+                                Packed with hand-pulped fresh custard apple grains blended seamlessly into reduced rabri-style sweet milk.
+                            </p>
+                            <button class="btn btn-scoop w-100 py-2 shadow-sm">
+                                <i class="fa-solid fa-cart-plus me-2"></i> Add To Scoop Bowl
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Flavor 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <div class="flavor-img-container position-relative">
+                            <img src="images/fl5.jfif" alt="Belgian Dark Chocolate">
+                            <span class="position-absolute top-0 end-0 m-3 badge px-3 py-2 rounded-pill shadow-sm fw-bold" style="background-color: #ab47bc; color: #fff;">Crunchy Delight</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold mb-0" style="color: #763b2c;">Roasted Almond Carnival</h4>
+                                <span class="fw-bold fs-5" style="color: #f79479;">₹165</span>
+                            </div>
+                            <p class="small text-muted mb-4 flex-grow-1" style="color: #5a4036 !important;">
+                                Caramelized California almond chunks folded into rich butterscotch and buttery vanilla bean ice cream.
+                            </p>
+                            <button class="btn btn-scoop w-100 py-2 shadow-sm">
+                                <i class="fa-solid fa-cart-plus me-2"></i> Add To Scoop Bowl
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW Flavor 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+                    <div class="flavor-card h-100 d-flex flex-column">
+                        <div class="flavor-img-container position-relative">
+                            <img src="images/fl2.jfif" alt="Tender Coconut Malai">
+                            <span class="position-absolute top-0 end-0 m-3 badge px-3 py-2 rounded-pill shadow-sm fw-bold" style="background-color: #29b6f6; color: #fff;">Refreshing</span>
+                        </div>
+                        <div class="p-4 d-flex flex-column flex-grow-1">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="fw-bold mb-0" style="color: #763b2c;">Tender Coconut Malai</h4>
+                                <span class="fw-bold fs-5" style="color: #f79479;">₹170</span>
+                            </div>
+                            <p class="small text-muted mb-4 flex-grow-1" style="color: #5a4036 !important;">
+                                Made with real tender coconut pulp pieces and light coconut water cream for a naturally cooling dessert experience.
+                            </p>
+                            <button class="btn btn-scoop w-100 py-2 shadow-sm">
+                                <i class="fa-solid fa-cart-plus me-2"></i> Add To Scoop Bowl
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </section>
+
+    
+
+    <!-- ================= FOOTER (Accurately Matched with Centered Copyright & Styled Map) ================= -->
+    <footer class="site-footer pt-5 pb-4 position-relative" style="z-index: 10;">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                
+                <!-- Column 1: Brand Info -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="d-flex align-items-center mb-3">
+                        <i class="fa-solid fa-ice-cream me-2 text-warning"></i> Old Mumbai Icecream
+                    </h5>
+                    <p class="small text-white-50 mb-3" style="line-height: 1.7;">
+                        Making the world a sweeter place one scoop at a time.
+                    </p>
+                    <p class="small text-white-50 mb-2">
+                        123 Ice Cream Lane, Dessert City, DC 12345
+                    </p>
+                    <p class="small text-white-50 mb-2">
+                        Email: hello@oldmumbai.com
+                    </p>
+                    <p class="small text-white-50 mb-0">
+                        Phone: (555) 123-4567
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2 small">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="flavors.html">Flavors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Stay Connected Form -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="mb-3">Stay Connected</h5>
+                    <p class="small text-white-50 mb-3">
+                        Subscribe to get secret menu updates and sweet discounts.
+                    </p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control form-control-sm rounded-start-pill px-3 border-0 shadow-none" placeholder="Enter your email" style="background-color: rgba(255,255,255,0.9);">
+                            <button class="btn btn-warning btn-sm rounded-end-pill px-3 fw-bold text-dark" type="button" style="background-color: #f79479; color: #fff !important;">Join</button>
+                        </div>
+                    </form>
+                    <div class="footer-social-icons mt-3">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Find Us (Accurate proportioned Map Box matching the reference design) -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="mb-3">Find Us</h5>
+                    <div class="rounded-4 overflow-hidden shadow-sm border border-white border-opacity-25" style="height: 180px; width: 100%; background: #e5e3df;">
+                        <iframe width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215259167734!2d-73.98785362347976!3d40.75889497138612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <hr class="border-light border-opacity-25 my-4">
+
+            <!-- Copyright Row - Centered Properly -->
+            <div class="row align-items-center">
+                <div class="col-12 text-center small text-white-50">
+                    &copy; 2026 Old Mumbai Ice Cream Shop & Company. All rights reserved. &nbsp;|&nbsp; <a href="#" class="text-white-50 text-decoration-underline me-2">Privacy</a> <a href="#" class="text-white-50 text-decoration-underline">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1000,
+            offset: 100
+        });
+    </script>
+</body>
+</html>
