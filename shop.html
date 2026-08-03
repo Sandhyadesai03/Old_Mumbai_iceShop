@@ -32,87 +32,139 @@
             min-height: 100vh;
         }
 
-    /* Navbar */
-.navbar{
-    background:#8FC8C3;   /* Mint Green */
-    padding:12px 0;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-}
+      /* ===========================
+         NAVBAR
+      =========================== */
 
-/* Logo */
-.navbar-brand{
-    color:#B04D67 !important;
-    font-size:1.5rem;
-    font-weight:700;
-}
+        header.site-header {
+            background: #98d1cb; /* Exact match to the mint green background color in the image */
+            box-shadow: 0 4px 15px rgba(0,0,0,.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.navbar-brand i{
-    color:#F99A86;
-    margin-right:8px;
-}
+        .navbar {
+            padding: 14px 0;
+        }
 
-/* Navigation Links */
-.nav-link{
-    color:#B04D67 !important;
-    font-weight:600;
-    font-size:15px;
-    padding:10px 16px !important;
-    position:relative;
-    transition:all .3s ease;
-}
+        /* Logo */
+        .navbar-brand {
+            color: #A3464F !important;
+            font-size: 2rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            letter-spacing: -0.5px;
+        }
 
-.nav-link::after{
-    content:"";
-    position:absolute;
-    left:15%;
-    bottom:5px;
-    width:0;
-    height:2px;
-    background:#F99A86;
-    transition:.3s;
-}
+        .navbar-brand i {
+            color: #F79B85;
+            margin-right: 10px;
+        }
 
-.nav-link:hover,
-.nav-link.active{
-    color:#9B415A !important;
-}
+        /* Navigation */
+        .navbar-nav {
+            align-items: center;
+        }
 
-.nav-link:hover::after,
-.nav-link.active::after{
-    width:70%;
-}
+        .navbar-nav .nav-item {
+            margin: 0 10px;
+        }
 
-/* Order Online Button */
-.btn-order-online{
-    background-color: #f0796e !important;
-    color: #fff !important;
-    border: none !important;          /* Remove border */
-    outline: none !important;         /* Remove outline */
-    border-radius: 50px;
-    padding: 10px 28px;
-    font-weight: 600;
-    box-shadow: none !important;      /* Remove shadow */
-    transition: all 0.3s ease;
-}
+        .navbar-nav .nav-link {
+            color: #A3464F !important;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 10px 14px !important;
+            position: relative;
+            transition: .3s;
+        }
 
-/* Hover */
-.btn-order-online:hover{
-    background-color: #E87A90 !important;
+        /* Underline */
+        .navbar-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 4px;
+            width: 0;
+            height: 2px;
+            background: #F79B85;
+            transform: translateX(-50%);
+            transition: .3s;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #8A3845 !important;
+        }
+
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 70%;
+        }
+
+      /* Order Button */
+.btn-order-online {
+    background: #F79B85 !important;
     color: #fff !important;
     border: none !important;
-    outline: none !important;
+    border-radius: 50px !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
     box-shadow: none !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+    text-align: center !important;
 }
 
-/* Click / Focus */
-.btn-order-online:focus,
-.btn-order-online:active{
-    background-color: #E87A90 !important;
+.btn-order-online:hover {
+    background: #A3464F !important;
     color: #fff !important;
-    border: none !important;
-    outline: none !important;
-    box-shadow: none !important;
 }
+        /* Toggle Button */
+        .navbar-toggler {
+            border: none;
+            background: rgba(255,255,255,.3);
+            padding: 7px 10px;
+            border-radius: 10px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Mobile */
+        @media(max-width:991.98px) {
+            .navbar-collapse {
+                background: #8BC3BE;
+                padding: 20px;
+                margin-top: 10px;
+                border-radius: 12px;
+            }
+
+            .navbar-nav {
+                align-items: flex-start;
+            }
+
+            .navbar-nav .nav-item {
+                width: 100%;
+                margin: 5px 0;
+            }
+
+            .navbar-nav .nav-link {
+                width: 100%;
+                text-align: left;
+                font-size: 17px;
+            }
+
+            .btn-order-online {
+                width: 100%;
+                margin-top: 15px;
+            }
+        }
+
         /* Hero & Multi-Colored Diagonal/Curved Partition Sections */
         .shop-hero-section {
             position: relative;
@@ -215,33 +267,36 @@
 
 <body>
 
-    <!-- ===========================
-         NAVBAR: COLLAPSIBLE WINDOW ON MOBILE/TABLET, HORIZONTAL ON LAPTOP
-         =========================== -->
-    <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <i class="fas fa-ice-cream me-2"></i> Old Mumbai Icecream
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="flavors.html">Flavors</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a href="shop.html" class="btn btn-order-online shadow-sm active">Order Online</a>
-                    </li>
-                </ul>
+    <!-- Wrapped inside site-header to inherit the correct background color -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <i class="fas fa-ice-cream me-2"></i> Old Mumbai Icecream
+                </a>
+                
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="flavors.html">Flavors</a></li>
+                        <li class="nav-item"><a class="nav-link" href="servises.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                            <a href="shop.html" class="btn btn-order-online shadow-sm active">Order Online</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
+
 
     <!-- ===========================
          HERO TITLE SECTION

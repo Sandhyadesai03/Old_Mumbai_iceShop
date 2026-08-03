@@ -30,70 +30,92 @@
             flex-direction: column;
             min-height: 100vh;
         }
-/* Navbar */
+/* Navbar Styling */
 .navbar{
-    background:#8FC8C3;   /* Mint Green */
-    padding:12px 0;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+    background: #8FC8C3;   /* Mint Green */
+    padding: 14px 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,.08);
 }
 
 /* Logo */
 .navbar-brand{
-    color:#B04D67 !important;
-    font-size:1.5rem;
-    font-weight:700;
+    color: #B04D67 !important;
+    font-size: 1.6rem;
+    font-weight: 700;
 }
 
 .navbar-brand i{
-    color:#F99A86;
-    margin-right:8px;
+    color: #F99A86;
+    margin-right: 8px;
 }
 
-/* Navigation Links */
-.nav-link{
-    color:#B04D67 !important;
-    font-weight:600;
-    font-size:15px;
-    padding:10px 16px !important;
-    position:relative;
-    transition:all .3s ease;
+/* Navigation Links - Increased Size & Responsiveness */
+.navbar-nav .nav-link{
+    color: #B04D67 !important;
+    font-weight: 600;
+    font-size: 17px; /* Increased size */
+    padding: 10px 18px !important;
+    position: relative;
+    transition: all .3s ease;
 }
 
-.nav-link::after{
-    content:"";
-    position:absolute;
-    left:15%;
-    bottom:5px;
-    width:0;
-    height:2px;
-    background:#F99A86;
-    transition:.3s;
+.navbar-nav .nav-link::after{
+    content: "";
+    position: absolute;
+    left: 15%;
+    bottom: 5px;
+    width: 0;
+    height: 2px;
+    background: #F99A86;
+    transition: .3s;
 }
 
-.nav-link:hover,
-.nav-link.active{
-    color:#9B415A !important;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color: #9B415A !important;
+    transform: translateY(-1px);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after{
-    width:70%;
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width: 70%;
 }
 
 /* Order Online Button */
 .btn-order-online{
-    background:#F99A86;
-    color:#ffffff !important;
-    border:none;
-    border-radius:40px;
-    padding:10px 28px;
-    font-weight:600;
-    transition:.3s;
+    background: #F99A86;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
 }
 
 .btn-order-online:hover{
-    background:#F28770;
-    color:#ffffff !important;
+    background: #F28770;
+    color: #ffffff !important;
+}
+
+/* Responsive adjustments for mobile/collapsible menu */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: #8FC8C3;
+        padding: 15px 20px;
+        border-radius: 12px;
+        margin-top: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 16px;
+        padding: 8px 12px !important;
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none; /* Hide bottom border underline effect on mobile for cleaner look */
+    }
 }
         /* Buttons */
         .btn-custom-pink {
@@ -392,11 +414,11 @@
                         <form class="row g-3">
                             <div class="col-md-6">
                                 <label for="name" class="form-label small fw-semibold text-muted">Your Name</label>
-                                <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="email" class="form-label small fw-semibold text-muted">Email Address</label>
-                                <input type="email" class="form-control" id="email" placeholder="john@example.com" required>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
                             </div>
                             <div class="col-12">
                                 <label for="subject" class="form-label small fw-semibold text-muted">Subject</label>

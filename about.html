@@ -31,7 +31,7 @@
             overflow-x: hidden;
             color: #4a3b4e;
         }
-        /* ===========================
+       /* ===========================
    NAVBAR
 =========================== */
 
@@ -92,22 +92,15 @@ header.site-header{
     transform:translateX(-50%);
     transition:.3s;
 }
-/* Hover Effect Only */
-.navbar-nav .nav-link:hover{
-    color:#8A3845 !important;
-}
 
-.navbar-nav .nav-link:hover::after{
-    width:70%;
-}
-
-/* Active Link (No Underline) */
+.navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active{
     color:#8A3845 !important;
 }
 
+.navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after{
-    width:0 !important;
+    width:70%;
 }
 
 /* Order Button */
@@ -140,39 +133,35 @@ header.site-header{
 }
 
 /* Mobile */
-@media (max-width:991.98px){
+@media(max-width:991.98px){
 
     .navbar-collapse{
         background:#8BC3BE;
-        margin-top:12px;
-        padding:18px;
+        padding:20px;
+        margin-top:10px;
         border-radius:12px;
     }
 
     .navbar-nav{
         align-items:flex-start;
-        width:100%;
     }
 
     .navbar-nav .nav-item{
         width:100%;
-        margin:6px 0;
+        margin:5px 0;
     }
 
     .navbar-nav .nav-link{
         width:100%;
         text-align:left;
-        padding:12px 10px !important;
         font-size:17px;
     }
 
     .btn-order-online{
         width:100%;
         margin-top:15px;
-        text-align:center;
     }
 }
-
 
         /* Glowing Text Effects */
         .pink-gradient-text {
@@ -355,65 +344,67 @@ header.site-header{
 
 <body>
 
-    <!-- Updated Responsive Navigation Bar matching the provided image style -->
-    <nav class="navbar navbar-expand-lg sticky-top custom-navbar"
-        style="background-color: #6da79e; border-bottom: none;">
+    <!-- Responsive Navigation Bar (Matched to Footer Color) -->
+    <nav class="navbar navbar-expand-lg sticky-top custom-navbar">
         <div class="container">
-            <!-- Brand Logo and Text -->
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html"
-                style="color: #6c301a; font-size: 1.5rem;">
-                <i class="fa-solid fa-ice-cream me-2" style="color: #f49b81;"></i>Old Mumbai Icecream
+            <a class="navbar-brand fw-bold text-white d-flex align-items-center" href="#">
+                <i class="fa-solid fa-ice-cream me-2" style="color: var(--accent-pink);"></i>Old Mumbai Icecream
             </a>
-
-            <!-- Toggle Button for Mobile -->
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <!-- Navigation Links -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-lg-center pt-3 pt-lg-0 pb-3 pb-lg-0">
-                    <li class="nav-item mb-2 mb-lg-0">
-                        <a href="index.html" class="nav-link px-3 fw-semibold" style="color: #6b3e2e;">Home</a>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="index.html" class="nav-link text-white-90 px-3">Home</a></li>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="about.html" class="nav-link text-white-90 px-3">About Us</a>
                     </li>
-                    <li class="nav-item mb-2 mb-lg-0">
-                        <a href="about.html" class="nav-link px-3 fw-semibold active" style="color: #6b3e2e;">About
-                            Us</a>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="flavors.html"
+                            class="nav-link text-white-90 px-3">Flavors</a></li>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="servises.html" class="nav-link text-white-90 px-3">Services</a>
                     </li>
-                    <li class="nav-item mb-2 mb-lg-0">
-                        <a href="flavors.html" class="nav-link px-3 fw-semibold"
-                            style="color: #6b3e2e;">Flavors</a>
+                    <li class="nav-item mb-2 mb-lg-0"><a href="contact.html" class="nav-link text-white-90 px-3">Contact</a>
                     </li>
-                    <li class="nav-item mb-2 mb-lg-0">
-                        <a href="servises.html" class="nav-link px-3 fw-semibold"
-                            style="color: #6b3e2e;">Services</a>
-                    </li>
-                    <li class="nav-item mb-2 mb-lg-0">
-                        <a href="contact.html" class="nav-link px-3 fw-semibold" style="color: #6b3e2e;">Contact</a>
-                    </li>
-                    <!-- Order Online Button -->
-                    <li class="nav-item ms-lg-4 mt-2 mt-lg-0">
-                        <a href="shop.html"
-                            class="btn px-5 py-2 shadow-sm w-100 w-lg-auto fw-semibold rounded-pill"
-                            style="background-color: #f49b81; color: #fff; border: none;">Order Online</a>
-                    </li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+    <a href="shop.html" class="btn px-4 py-2 shadow-sm w-100 w-lg-auto text-white fw-bold" style="background-color: #f79479; border-radius: 50px;">Order Online</a>
+</li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Add this to your CSS file for the active link state -->
+    <!-- Custom Styles for Navbar to Match Footer -->
     <style>
-        .custom-navbar .nav-link.active {
-            text-decoration: underline;
-            text-decoration-thickness: 3px;
-            text-decoration-color: #e58b70;
-            text-underline-offset: 6px;
+        .custom-navbar {
+            background-color: #8ec8c3;
+            /* Exact same color as your footer */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            /* Adds a subtle, attractive drop shadow */
+            transition: all 0.3s ease-in-out;
         }
-    </style>
-<!-- Multi-Partitioned Dynamic Section with Multi-Tone Color Waves -->
+
+        .custom-navbar .nav-link {
+            font-weight: 500;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .custom-navbar .nav-link:hover {
+            color: #ffffff !important;
+            transform: translateY(-1px);
+        }
+
+        /* Customize the mobile toggler icon to look clean on the teal background */
+        .custom-navbar .navbar-toggler {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            padding: 6px 10px;
+        }
+
+        .custom-navbar .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+    </style><!-- Multi-Partitioned Dynamic Section with Multi-Tone Color Waves -->
 <section class="py-5 position-relative overflow-hidden" style="background: #ffffff; padding-bottom: 140px !important;">
 
     <!-- Multi-Tone Angled Background Partitions -->
